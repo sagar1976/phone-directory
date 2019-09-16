@@ -31,3 +31,39 @@
     transform: rotate(360deg);
   }
 }
+
+.btnButton{
+  background-color:lightgreen;
+  color: white;
+  margin-top: 20px;
+  border: none;
+  height: 30px;
+  width: 50px;
+  margin-left: 20px;
+
+}
+.nameStyle{
+  margin-left: 20px;
+  margin-left: 20px;
+  font-weight: strong;
+  font-weight: 700;
+
+
+}
+#textSpacing{
+  margin-top: 20px;
+}
+
+.grid-item{
+  margin-left: 20px;
+}
+
+#phoneStyle-container{
+  position: relative;
+  margin-left: 90px;
+}
+
+#phoneStyle{
+  
+  margin-left: 35px;
+}

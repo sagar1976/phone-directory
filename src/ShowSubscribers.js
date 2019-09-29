@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import Header from './Header.js';
-import './App.css';
+import './ShowSubscribers.css';
+import {Link} from  'react-router-dom';
 
-class App extends Component {
+class ShowSubscribers extends Component {
 
-  constructor(){
-    super();
-    this.state ={
-      subscriberListToShow: []
-    }
+  onDeleteClick = (subscriberId) => {
+    this.props.deleteSubscriberHandler(subscriberId);
   }
 
   render(){
@@ -17,7 +15,7 @@ class App extends Component {
       <div>
         <Header heading="Phone Directory"/>
         <div className="component-body-container">
-          <button className="custom-btn add-btn">Add</button>
+          <Link to="/add"><button className="custom-btn add-btn">Add</button></Link>
 
           <div className="grid-container heading-container">
             <span className="grid-item name-heading">Name</span>
@@ -25,12 +23,12 @@ class App extends Component {
           </div>
 
           {
-            this.state.subscriberListToShow.map(sub => {
+            this.props.subscribersList.map(sub => {
               return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>
                 <span className="grid-item action-btn-container">
-                  <button className="custom-btn delete-btn">Delete</button>
+                  <button className="custom-btn delete-btn" onClick={this.onDeleteClick.bind(this, sub.id)}>Delete</button>
                 </span>
               </div>
             })
@@ -41,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscribers;
